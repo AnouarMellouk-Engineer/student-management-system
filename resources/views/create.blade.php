@@ -3,6 +3,16 @@
 @section('title','new student')
 
 
+@section('url')
+            <div >
+                <a href="{{route('students.create')}}" class="  block px-2 py-1.5 rounded-md bg-black text-white font-medium">add new student</a>
+            </div>
+            <div >
+                <a href="{{route('courses.index')}}" class="  block px-2 py-1.5 rounded-md bg-black text-white font-medium">courses</a>
+            </div>
+@endsection
+
+
 @section('content')
 <div class="max-w-xl mx-auto px-4 py-8">
     <h1 class="text-2xl font-bold mb-6">Add Student Info</h1>
@@ -25,11 +35,11 @@
         </div>
 
         <!-- Course -->
-        <div>
+        {{-- <div>
             <label for="course" class="block text-sm font-medium text-gray-700">Course</label>
             <input type="text" name="course" id="course" required
                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 py-1.5 px-2">
-        </div>
+        </div> --}}
 
         <!-- Date -->
         <div>

@@ -18,9 +18,7 @@
     <body>
         <nav class="flex items-center py-6 px-3 gap-10 bg-gray-100">
             <h1 class=" font-medium text-2xl  cursor-pointer"><a href="{{route('students.index')}}">Management</a></h1>
-            <div >
-                <a href="{{route('students.create')}}" class="  block px-2 py-1.5 rounded-md bg-black text-white font-medium">Add New Student</a>
-            </div>
+            @yield('url')
         </nav>
         @yield('content')
     </body>

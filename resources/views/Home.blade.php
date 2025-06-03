@@ -1,6 +1,20 @@
+
+
+
 @extends('Base')
 
 @section('title','Home Page')
+
+
+
+@section('url')
+            <div >
+                <a href="{{route('students.create')}}" class="  block px-2 py-1.5 rounded-md bg-black text-white font-medium">add new student</a>
+            </div>
+             <div >
+                <a href="{{route('courses.index')}}" class="  block px-2 py-1.5 rounded-md bg-black text-white font-medium">courses</a>
+            </div>
+@endsection
 
 
 @section('content')
@@ -9,7 +23,7 @@
                 <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
                     <thead>
                         <tr class="bg-gray-100 text-left text-sm font-semibold text-gray-700 uppercase">
-                            @foreach(['full name','course','date','finiched',''] as $title)
+                            @foreach(['full name','date','finiched',''] as $title)
                             <th class="py-3 px-4 border-b">{{$title}}</th>
                             @endforeach
                         </tr>
@@ -20,7 +34,7 @@
                             <tr class="hover:bg-gray-50">
 
                                    <td class="py-3 px-4">{{$student->first_name .' '.$student->last_name}}</td>
-                                    <td class="py-3 px-4">{{$student->course}}</td>
+                                    {{-- <td class="py-3 px-4">{{$student->course}}</td> --}}
                                      <td class="py-3 px-4">{{$student->started_at}}</td>
                                       <td class="py-3 px-4">@if($student->finished)YES @else NO @endif</td>
 

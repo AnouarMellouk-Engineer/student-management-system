@@ -24,7 +24,7 @@ class HomeController extends Controller
         $newStudent = new Student;
         $newStudent->first_name = $request->first_name;
         $newStudent->last_name = $request->last_name;
-        $newStudent->course = $request->course;
+        // $newStudent->course = $request->course;
         $newStudent->started_at = $request->date;
         if ($request->finished == 'true') {
             $newStudent->finished = true;
@@ -50,7 +50,7 @@ class HomeController extends Controller
         $newStudent = Student::find($id);
         $newStudent->first_name = $request->first_name;
         $newStudent->last_name = $request->last_name;
-        $newStudent->course = $request->course;
+        // $newStudent->course = $request->course;
         $newStudent->started_at = $request->date;
         if ($request->finished == 'true') {
             $newStudent->finished = true;
