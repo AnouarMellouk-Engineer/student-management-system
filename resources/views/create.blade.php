@@ -35,11 +35,17 @@
         </div>
 
         <!-- Course -->
-        {{-- <div>
-            <label for="course" class="block text-sm font-medium text-gray-700">Course</label>
-            <input type="text" name="course" id="course" required
+        <div>
+            <label for="course" class="block text-md mb-2 font-medium text-gray-700">Courses</label>
+            <select name="courseId" id="course" required
                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 py-1.5 px-2">
-        </div> --}}
+                    <option value="" selected>Choose...</option>
+                    @foreach ($courses as $course)
+                            <option value="{{$course->id}}" >{{$course->name}}</option>
+                    @endforeach
+            </select>
+        </div>
+
 
         <!-- Date -->
         <div>
@@ -55,7 +61,7 @@
                 class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:ring-blue-500 focus:border-blue-500 py-1.5 px-2">
                 <option value="" disabled selected>Choose...</option>
                 <option value="true">Yes</option>
-                <option value="false">No</option>
+                <option value="false" selected>No</option>
             </select>
         </div>
 

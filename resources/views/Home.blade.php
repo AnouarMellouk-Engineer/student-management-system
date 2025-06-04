@@ -23,7 +23,7 @@
                 <table class="min-w-full bg-white border border-gray-200 rounded-lg shadow-md">
                     <thead>
                         <tr class="bg-gray-100 text-left text-sm font-semibold text-gray-700 uppercase">
-                            @foreach(['full name','date','finiched',''] as $title)
+                            @foreach(['full name','date','courses','finiched',''] as $title)
                             <th class="py-3 px-4 border-b">{{$title}}</th>
                             @endforeach
                         </tr>
@@ -36,6 +36,7 @@
                                    <td class="py-3 px-4">{{$student->first_name .' '.$student->last_name}}</td>
                                     {{-- <td class="py-3 px-4">{{$student->course}}</td> --}}
                                      <td class="py-3 px-4">{{$student->started_at}}</td>
+                                      <td class="py-3 px-4">@foreach($student->courses as $course) <p>{{$course->name}}</p>@endforeach</td>
                                       <td class="py-3 px-4">@if($student->finished)YES @else NO @endif</td>
 
                                 <td class="py-3 px-4 space-x-2 flex items-center gap-2">

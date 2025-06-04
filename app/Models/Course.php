@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
+
 class Course extends Model
 {
     public $timestamps = false;
@@ -11,5 +12,10 @@ class Course extends Model
     public function instructs()
     {
         return $this->hasMany(Instruct::class);
+    }
+
+    public function students()
+    {
+        return $this->belongsToMany(Student::class);
     }
 }

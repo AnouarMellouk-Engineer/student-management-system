@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\Student;
 use Illuminate\Http\Request;
 use PHPUnit\Framework\MockObject\Builder\Stub;
@@ -11,16 +12,23 @@ class HomeController extends Controller
 
     public function index()
     {
+
+
+
         return view('Home', ['students' => Student::all()]);
     }
 
     public function create()
     {
-        return view('create');
+
+        return view('create', ['courses' => Course::all()]);
     }
 
     public function store(Request $request)
     {
+
+
+
         $newStudent = new Student;
         $newStudent->first_name = $request->first_name;
         $newStudent->last_name = $request->last_name;
@@ -31,7 +39,11 @@ class HomeController extends Controller
         } else {
             $newStudent->finished = false;
         }
+
+
         $newStudent->save();
+
+        $newStudent->courses()->attach($request->courseId);
         return to_route('students.index');
     }
 
